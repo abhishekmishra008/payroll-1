@@ -1,0 +1,648 @@
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2) {
+    table.a.table.table-bordered {
+        width: 100% !important;
+    }
+    span.b{
+        font-size: 7px !important;
+		    padding-right: 10px !important;
+    }
+
+    i.a.fa.fa-user {
+        font-size: 7px !important;
+    }
+    i.a.fa.fa-user-times{
+        font-size: 7px !important;
+    }
+    .fc-basic-view td.fc-day-number, .fc-basic-view td.fc-week-number span {
+        /* padding-top: 2px; */
+        /* padding-bottom: 2px; */
+        font-size: 8px !important;
+    }
+    i.a.icon-login{ font-size: 7px !important;margin-left: -14px !important; }
+    i.a.icon-logout{ font-size: 7px !important;     margin-left: -4px !important; }
+    h2 {
+        font-size: 23px !important;
+    }
+    .col-md-1 {
+    padding-bottom: 65px !important;
+	
+}
+.portlet.light {
+    padding: 8px 0px 15px !important;
+
+}
+.col-md-4 {
+    padding: 0 55px 0 !important;
+}
+.portlet.light>.portlet-title>.nav-tabs>li>a {
+    margin: none !important;padding: 11px !important;
+}
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+    table.a.table.table-bordered {
+        width: 100% !important;
+    }
+    h2 {
+        font-size: 23px !important;
+    }
+    span.b{
+        font-size: 7px !important;		    padding-right: 10px !important;
+    }
+    i.a.fa.fa-user {
+        font-size: 7px !important;
+    }
+    i.a.fa.fa-user-times{
+        font-size: 7px !important;
+    }
+    .fc-basic-view td.fc-day-number, .fc-basic-view td.fc-week-number span {
+        /* padding-top: 2px; */
+        /* padding-bottom: 2px; */
+        font-size: 8px !important;
+    }
+    i.a.icon-login{ font-size: 7px !important;margin-left: -14px !important;}
+    i.a.icon-logout{ font-size: 7px !important; margin-left: -4px !important}
+    .col-md-1 {
+    padding-bottom: 65px !important;
+}
+.portlet.light {
+    padding: 8px 0px 15px !important;
+
+}.col-md-4 {
+    padding: 0 55px 0 !important;
+}
+.portlet.light>.portlet-title>.nav-tabs>li>a {
+    margin: none !important;padding: 11px !important;
+}
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+    table.a.table.table-bordered {
+        width: 100% !important;
+    }
+    span.b{
+        font-size: 7px !important;		    padding-right: 10px !important;
+    }
+    i.a.fa.fa-user {
+        font-size: 7px !important;
+    }
+    i.a.fa.fa-user-times{
+        font-size: 7px !important;
+    }.fc-basic-view td.fc-day-number, .fc-basic-view td.fc-week-number span {
+        /* padding-top: 2px; */
+        /* padding-bottom: 2px; */
+        font-size: 8px !important;
+    }
+    i.a.icon-login{ font-size: 7px !important;margin-left: -14px !important;}
+    i.a.icon-logout{ font-size: 7px !important; margin-left: -4px !important}
+
+    h2 {
+        font-size: 23px !important;
+    }
+    .col-md-1 {
+    padding-bottom: 65px !important;
+}
+.portlet.light {
+    padding: 8px 0px 15px !important;
+
+}
+.col-md-4 {
+    padding: 0 55px 0 !important;
+}
+.portlet.light>.portlet-title>.nav-tabs>li>a {
+    margin: none !important;padding: 11px !important;
+}
+}
+
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2) {
+    table.a.table.table-bordered {
+        width: 100% !important;
+    }
+    span.b{
+        font-size: 7px !important;		    padding-right: 10px !important;
+    }
+    i.a.fa.fa-user {
+        font-size: 7px !important;
+    }
+    i.a.fa.fa-user-times{
+        font-size: 7px !important;
+    }
+    .fc-basic-view td.fc-day-number, .fc-basic-view td.fc-week-number span {
+        /* padding-top: 2px; */
+        /* padding-bottom: 2px; */
+        font-size: 8px !important;
+    }
+    i.a.icon-login{ font-size: 7px !important;margin-left: -14px !important;}
+    i.a.icon-logout{ font-size: 7px !important; margin-left: -4px !important}
+    h2 {
+        font-size: 23px !important;
+    }
+    .col-md-1 {
+    padding-bottom: 65px !important;
+}
+.portlet.light {
+    padding: 8px 0px 15px !important;
+
+}
+.col-md-4 {
+    padding: 0 55px 0 !important;
+}
+.portlet.light>.portlet-title>.nav-tabs>li>a {
+    margin: none !important;padding: 11px !important;
+}
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+    table.a.table.table-bordered {
+        width: 100% !important;
+    }
+    span.b{
+        font-size: 7px !important;		    padding-right: 10px !important;
+    }
+    i.a.fa.fa-user {
+        font-size: 7px !important;
+    }
+    i.a.fa.fa-user-times{
+        font-size: 7px !important;
+    }
+    .fc-basic-view td.fc-day-number, .fc-basic-view td.fc-week-number span {
+        /* padding-top: 2px; */
+        /* padding-bottom: 2px; */
+        font-size: 8px !important;
+    }
+    i.a.icon-login{ font-size: 7px !important;margin-left: -14px !important;}
+    i.a.icon-logout{ font-size: 7px !important; margin-left: -4px !important}
+    h2 {
+        font-size: 23px !important;
+    }
+    .col-md-1 {
+    padding-bottom: 65px !important;
+}
+.portlet.light {
+    padding: 8px 0px 15px !important;
+
+}
+.col-md-4 {
+    padding: 0 55px 0 !important;
+}.portlet.light>.portlet-title>.nav-tabs>li>a {
+    margin: none !important;padding: 11px !important;
+}
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+    table.a.table.table-bordered {
+        width: 100% !important;
+    }
+    span.b{
+        font-size: 7px !important;
+    }
+    i.a.fa.fa-user {
+        font-size: 7px !important;
+    }
+    i.a.fa.fa-user-times{
+        font-size: 7px !important;
+    }
+    .fc-basic-view td.fc-day-number, .fc-basic-view td.fc-week-number span {
+        /* padding-top: 2px; */
+        /* padding-bottom: 2px; */
+        font-size: 8px !important;
+    }
+    i.a.icon-login{ font-size: 7px !important;margin-left: -14px !important;}
+    i.a.icon-logout{ font-size: 7px !important; margin-left: -4px !important}
+    h2 {
+        font-size: 23px !important;
+    }
+    .col-md-1 {
+    padding-bottom: 65px !important;
+}
+.portlet.light {
+    padding: 8px 0px 15px !important;
+
+}
+.col-md-4 {
+    padding: 0 55px 0 !important;
+}
+.portlet.light>.portlet-title>.nav-tabs>li>a {
+    margin: none !important;padding: 11px !important;
+}
+}
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2) {
+    table.a.table.table-bordered {
+        width: 100% !important;
+    }
+    span.b{
+        font-size: 7px !important;		    padding-right: 10px !important;
+    }
+    i.a.fa.fa-user {
+        font-size: 7px !important;
+    }
+    i.a.fa.fa-user-times{
+        font-size: 7px !important;
+    }
+    .fc-basic-view td.fc-day-number, .fc-basic-view td.fc-week-number span {
+        /* padding-top: 2px; */
+        /* padding-bottom: 2px; */
+        font-size: 8px !important;
+    }
+    i.a.icon-login{ font-size: 7px !important;margin-left: -14px !important;}
+    i.a.icon-logout{ font-size: 7px !important; margin-left: -4px !important}
+    h2 {
+        font-size: 23px !important;
+    }
+    .col-md-1 {
+    padding-bottom: 65px !important;
+}
+.portlet.light {
+    padding: 8px 0px 15px !important;
+
+}
+.col-md-4 {
+    padding: 0 55px 0 !important;
+}
+.portlet.light>.portlet-title>.nav-tabs>li>a {
+    margin: none !important;padding: 11px !important;
+}
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+    table.a.table.table-bordered {
+        width: 100% !important;
+    }
+    span.b{  font-size: 7px !important;		    padding-right: 10px !important;
+    }
+    i.a.fa.fa-user {
+        font-size: 7px !important;
+    }
+    i.a.fa.fa-user-times{
+        font-size: 7px !important;
+    }
+    .fc-basic-view td.fc-day-number, .fc-basic-view td.fc-week-number span {
+        /* padding-top: 2px; */
+        /* padding-bottom: 2px; */
+        font-size: 8px !important;
+    }
+    i.a.icon-login{ font-size: 7px !important;margin-left: -14px !important;}
+    i.a.icon-logout{ font-size: 7px !important; margin-left: -4px !important}
+    h2 {
+        font-size: 23px !important;
+    }
+    .col-md-1 {
+    padding-bottom: 65px !important;
+}
+.portlet.light {
+    padding: 8px 0px 15px !important;
+
+}
+.col-md-4 {
+    padding: 0 55px 0 !important;
+}
+.portlet.light>.portlet-title>.nav-tabs>li>a {
+    margin: none !important;padding: 11px !important;
+}
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+    table.a.table.table-bordered {
+        width: 100% !important;
+    }
+    span.b{
+        font-size: 7px !important;		    padding-right: 10px !important;
+    }
+    i.a.fa.fa-user {
+        font-size: 7px !important;
+    }
+    i.a.fa.fa-user-times{
+        font-size: 7px !important;
+    }
+    .fc-basic-view td.fc-day-number, .fc-basic-view td.fc-week-number span {
+        /* padding-top: 2px; */
+        /* padding-bottom: 2px; */
+        font-size: 8px !important;
+    }
+    i.a.icon-login{ font-size: 7px !important;margin-left: -14px !important;}
+    i.a.icon-logout{ font-size: 7px !important; margin-left: -4px !important}
+    h2 {
+        font-size: 23px !important;
+    }
+    .col-md-1 {
+    padding-bottom: 65px !important;
+}
+.portlet.light {
+    padding: 8px 0px 15px !important;
+
+}
+.col-md-4 {
+    padding: 0 55px 0 !important;
+}
+.portlet.light>.portlet-title>.nav-tabs>li>a {
+    margin: none !important;padding: 11px !important;
+}
+}
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 737px)
+and (-webkit-min-device-pixel-ratio: 3) {
+    table.a.table.table-bordered {
+        width: 100% !important;
+    }
+    span.b{
+        font-size: 7px !important;		    padding-right: 10px !important;
+    }
+    i.a.fa.fa-user {
+        font-size: 7px !important;
+    }
+    i.a.fa.fa-user-times{
+        font-size: 7px !important;
+    }
+    .fc-basic-view td.fc-day-number, .fc-basic-view td.fc-week-number span {
+        /* padding-top: 2px; */
+        /* padding-bottom: 2px; */
+        font-size: 8px !important;
+    }
+    i.a.icon-login{ font-size: 7px !important;margin-left: -14px !important;}
+    i.a.icon-logout{ font-size: 7px !important; margin-left: -4px !important}
+    h2 {
+        font-size: 23px !important;
+    }
+    .col-md-1 {
+    padding-bottom: 65px !important;
+}
+.portlet.light {
+    padding: 8px 0px 15px !important;
+
+}
+.col-md-4 {
+    padding: 0 55px 0 !important;
+}
+.portlet.light>.portlet-title>.nav-tabs>li>a {
+    margin: none !important;padding: 11px !important;
+}
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 737px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: portrait) {
+    table.a.table.table-bordered {
+        width: 100% !important;
+    }
+    span.b{
+        font-size: 7px !important;		    padding-right: 10px !important;
+    }
+    i.a.fa.fa-user {
+        font-size: 7px !important;
+    }
+    i.a.fa.fa-user-times{
+        font-size: 7px !important;
+    }
+    .fc-basic-view td.fc-day-number, .fc-basic-view td.fc-week-number span {
+        /* padding-top: 2px; */
+        /* padding-bottom: 2px; */
+        font-size: 8px !important;
+    }
+    i.a.icon-login{ font-size: 7px !important;margin-left: -14px !important;}
+    i.a.icon-logout{ font-size: 7px !important; margin-left: -4px !important}
+    h2 {
+        font-size: 23px !important;
+    }
+    .col-md-1 {
+    padding-bottom: 65px !important;
+}
+.portlet.light {
+    padding: 8px 0px 15px !important;
+
+}
+.col-md-4 {
+    padding: 0 55px 0 !important;
+}
+.portlet.light>.portlet-title>.nav-tabs>li>a {
+    margin: none !important;padding: 11px !important;
+}
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 737px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: landscape) {
+    table.a.table.table-bordered {
+        width: 100% !important;
+    }
+    span.b{
+        font-size: 7px !important;		    padding-right: 10px !important;
+    }
+    i.a.fa.fa-user {
+        font-size: 7px !important;
+    }
+    i.a.fa.fa-user-times{
+        font-size: 7px !important;
+    }
+    .fc-basic-view td.fc-day-number, .fc-basic-view td.fc-week-number span {
+        /* padding-top: 2px; */
+        /* padding-bottom: 2px; */
+        font-size: 8px !important;
+    }
+    i.a.icon-login{ font-size: 7px !important;margin-left: -14px !important;}
+    i.a.icon-logout{ font-size: 7px !important; margin-left: -4px !important}
+    h2 {
+        font-size: 23px !important;
+    }
+    .col-md-1 {
+    padding-bottom: 65px !important;
+}
+.portlet.light {
+    padding: 8px 0px 15px !important;
+
+}
+.col-md-4 {
+    padding: 0 55px 0 !important;
+}
+.portlet.light>.portlet-title>.nav-tabs>li>a {
+    margin: none !important;padding: 11px !important;
+}
+}
+
+/* ----------- iPhone X ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 812px)
+and (-webkit-min-device-pixel-ratio: 3) {
+    table.a.table.table-bordered {
+        width: 100% !important;
+    }
+    span.b{
+        font-size: 7px !important;		    padding-right: 10px !important;
+    }
+    i.a.fa.fa-user {
+        font-size: 7px !important;
+    }
+    i.a.fa.fa-user-times{
+        font-size: 7px !important;
+    }
+    .fc-basic-view td.fc-day-number, .fc-basic-view td.fc-week-number span {
+        /* padding-top: 2px; */
+        /* padding-bottom: 2px; */
+        font-size: 8px !important;
+    }
+    i.a.icon-login{ font-size: 7px !important;margin-left: -14px !important;}
+    i.a.icon-logout{ font-size: 7px !important;margin-left: -4px !important}
+    h2 {
+        font-size: 23px !important;
+    }
+    .col-md-1 {
+    padding-bottom: 65px !important;
+}
+.portlet.light {
+    padding: 8px 0px 15px !important;
+
+}
+.col-md-4 {
+    padding: 0 55px 0 !important;
+}
+.portlet.light>.portlet-title>.nav-tabs>li>a {
+    margin: none !important;padding: 11px !important;
+}
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 812px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: portrait) {
+    table.a.table.table-bordered {
+        width: 100% !important;
+    }
+    span.b{		    padding-right: 10px !important;
+        font-size: 7px !important;
+    }
+    i.a.fa.fa-user {
+        font-size: 7px !important;
+    }
+    i.a.fa.fa-user-times{
+        font-size: 7px !important;
+    }
+    .fc-basic-view td.fc-day-number, .fc-basic-view td.fc-week-number span {
+        /* padding-top: 2px; */
+        /* padding-bottom: 2px; */
+        font-size: 8px !important;
+    }
+    i.a.icon-login{ font-size: 7px !important;margin-left: -14px !important;}
+    i.a.icon-logout{ font-size: 7px !important; margin-left: -4px !important}
+    h2 {
+        font-size: 23px !important;
+    }
+    .col-md-1 {
+    padding-bottom: 65px !important;
+}
+.portlet.light {
+    padding: 8px 0px 15px !important;
+
+}
+.col-md-4 {
+    padding: 0 55px 0 !important;
+}
+.portlet.light>.portlet-title>.nav-tabs>li>a {
+    margin: none !important;padding: 11px !important;
+}
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 812px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: landscape) {
+    table.a.table.table-bordered {
+        width: 100% !important;
+    }
+    span.b{
+        font-size: 7px !important;		    padding-right: 10px !important;
+    }
+    i.a.fa.fa-user {
+        font-size: 7px !important;
+    }
+    i.a.fa.fa-user-times{
+        font-size: 7px !important;
+    }
+    .fc-basic-view td.fc-day-number, .fc-basic-view td.fc-week-number span {
+        /* padding-top: 2px; */
+        /* padding-bottom: 2px; */
+        font-size: 8px !important;
+    }
+    i.a.icon-login{ font-size: 7px !important;margin-left: -14px !important;}
+    i.a.icon-logout{ font-size: 7px !important; margin-left: -4px !important;}
+    h2 {
+        font-size: 23px !important;
+    }
+    .col-md-1 {
+    padding-bottom: 65px !important;
+}
+.portlet.light {
+    padding: 8px 0px 15px !important;
+
+}
+.col-md-4 {
+    padding: 0 55px 0 !important;
+}
+.portlet.light>.portlet-title>.nav-tabs>li>a {
+    margin: none !important; padding: 11px !important;
+}
+
+}

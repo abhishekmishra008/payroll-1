@@ -1,0 +1,137 @@
+       hr{
+            opacity: 0.08 !important;
+        }
+        .day{
+            border-radius: 4rem;
+        }
+        .help-desk-card {
+            padding-top: 0rem !important;
+            padding-bottom: 2rem !important;
+            padding-left: 0rem !important;
+            padding-right: 1rem !important;
+        }
+
+        .card {
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        /* Calendar circular dates */
+        #calendar {
+            max-width: 700px !important;
+        }
+        .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
+            min-height: 2em;
+            position: relative ;
+        }
+        .fc .fc-daygrid-day-top {
+            display : flex ;
+            justify-content: center !important;
+        }
+        .fc-daygrid-day-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            transition: 0.2s;
+        }
+        .fc-daygrid-day-number:hover {
+            background: #0d6efd;
+            color: #fff !important;
+            cursor: pointer;
+        }
+        /* Event style */
+        .fc-daygrid-event {
+            border-radius: 8px !important;
+            padding: 2px 6px !important;
+            font-size: 0.8rem !important;
+        }
+        .fc-toolbar-title {
+            font-size: 1.2rem !important;
+            font-weight: 600;
+        }
+        #year_of_holiday_id {
+            border-top: none !important; 
+            border-left: none !important; 
+            border-right: none !important;
+        }
+        /* Base Table Style */
+        .custom-holiday-table th,
+        .custom-holiday-table td {
+            padding: 10px 12px;
+            vertical-align: middle;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap; /* prevent unwanted text wrapping */
+        }
+
+        /* Allow wrapping only for Holiday Name column */
+        .custom-holiday-table td.holiday-name {
+            white-space: normal !important;
+            word-wrap: break-word;
+            text-align: left;
+        }
+
+        /* Sticky Header */
+        .custom-holiday-table thead th {
+            position: sticky;
+            top: 0;
+            background: #2ba060ff;
+            z-index: 2;
+            color: #fff;
+        }
+
+        /* Hover Effect */
+        .custom-holiday-table tbody tr {
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+        .custom-holiday-table tbody tr:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Fix: For smaller screens */
+        @media (max-width: 992px) {
+            .holiday-table .table-responsive {
+                max-height: 40rem;
+                overflow-y: auto;
+            }
+
+            .custom-holiday-table th,
+            .custom-holiday-table td {
+                font-size: 10px;
+                padding: 8px 10px;
+            }
+
+            /* Make long names wrap neatly */
+            .custom-holiday-table td.holiday-name {
+                white-space: normal !important;
+                word-break: break-word;
+                text-align: left;
+            }
+        }
+
+        /* Prevent squished height in small devices */
+        .holiday-table .table-responsive {
+            max-height: 40rem;
+            overflow-y: auto;
+        }
+
+        /* Fix for small card alignment */
+        @media (max-width: 768px) {
+            .col-md-7, .col-md-5 {
+                width: 100%;
+            }
+
+            .holiday-table {
+                margin-top: 20px;
+            }
+
+            .holiday-table .table-responsive {
+                max-height: 40rem;
+                overflow-y: auto;
+            }
+        }

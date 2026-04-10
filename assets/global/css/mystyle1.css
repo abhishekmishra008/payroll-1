@@ -1,0 +1,136 @@
+/*
+body {
+     background: url(../img/bg_01.jpg) center center no-repeat fixed #2f373e; 
+    background-size: cover;
+    background-color:white !important;
+}
+.DTS .table-scrollable, .table-scrollable.table-scrollable-borderless, .table-scrollable>.table-bordered {
+    border: 8 !important;
+}
+.table-scrollable>.table {
+    width: 100%!important;
+    margin: inherit!important;
+    background-color: #fff;
+}
+
+.page-content.page-content-popup {
+    background: #fff;
+    height: 1080px !important;
+}
+a#index {
+    background-color: #dfddde !important;
+}
+.required p {
+    margin: -10px 0 !important; 
+}
+hr, p {
+    margin: 2px 0 !important;
+}
+.page-content{
+    height: 1080px;
+}
+@media only screen and (max-width: 1080px) {
+
+.page-content.page-content-popup {
+    background: #fff;
+    height: 1020px !important;
+}
+
+}*/
+table#sample_1 {
+    text-align: center !important;
+}
+td {
+    text-align: center;
+}
+span.badge.badge-primary.mybag {
+    height: 23px;
+    border-radius: 0px !important;
+    font-size: 15px !important;
+    text-align: center !important;
+    padding: 3px 6px !important;
+    margin: 2px;
+}
+
+/* Ticket Management CSS start */
+span.error {
+    color:red;
+    size:1px
+}
+
+.form-control.error{
+
+}
+.row {
+    margin-left: -4px;
+    margin-right: -8px;
+}
+
+a {
+    color: #111113
+}
+a:visited {
+    color: #111212
+}
+
+#header h2 {
+    color: white;
+    margin:0px;
+    padding: 5px;
+}
+.comment {
+    width: 300px;
+}
+a.morelink {
+    text-decoration:none;
+    outline: none;
+}
+.morecontent span {
+    display: none;
+    .btn-circle {
+        width: 30px;
+        height: 30px;
+        padding: 6px 0px;
+        border-radius: 15px;
+        text-align: center;
+        font-size: 12px;
+        line-height: 1.42857;
+    }
+
+}
+
+.chat-wrapper {
+    height: 350px;
+    overflow-y: auto;
+    padding: 10px;
+    background: #f5f5f5;
+}
+
+.chat-msg {
+    margin-bottom: 10px;
+}
+
+.chat-msg.left {
+    text-align: left;
+}
+
+.chat-msg.right {
+    text-align: right;
+}
+
+.chat-bubble {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 15px;
+    max-width: 70%;
+}
+
+.chat-msg.left .chat-bubble {
+    background: #ffffff;
+}
+
+.chat-msg.right .chat-bubble {
+    background: #007bff;
+    color: white;
+}
+/* Ticket Management CSS start */

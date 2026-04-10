@@ -1,0 +1,690 @@
+<?php
+$this->load->view('human_resource/navigation');
+defined('BASEPATH') OR exit('No direct script access allowed');
+if ($session = $this->session->userdata('login_session') == '') {
+//take them back to signin
+    redirect(base_url() . 'login');
+}
+$username = $this->session->userdata('login_session');
+?>
+
+<style>
+    label.error {
+        color:red;
+    }
+    .form-control .error{
+        color: red;
+    }
+</style>
+<link href="<?php echo base_url() . "assets/"; ?>global/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo base_url() . "assets/"; ?>global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+<div class="page-content-wrapper">
+    <div class="page-content">
+
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li>
+                    <a href="#">
+                        <?php if ($firm_name_nav !== "") { ?>
+                            <!--<h3 class="uppercase"style="font-size:23px;">-->
+                            <?php echo $firm_name_nav; ?>
+                            <!--</h3>-->
+                            <?php
+                        } else {
+                            echo 'Client Admin';
+                        }
+                        ?>
+
+                    </a>
+                    <i class="fa fa-circle" style="font-size: 5px;margin: 0 5px;position: relative;top: -3px; opacity: .4;"></i>
+                </li>
+            </ul>
+            <div class="page-toolbar">
+                <ul class="page-breadcrumb">
+                    <li class="<?= ($this->uri->segment(1) === 'hr_dashboard') ? 'active' : '' ?>">
+                        <a href="<?= base_url() ?>hr_dashboard">Home</a>
+                        <i class="fa fa-circle" style="font-size: 5px;margin: 0 5px;position: relative;top: -3px; opacity: .4;"></i>
+                    </li>
+                    <li>
+                        <a href="#"><?php echo $prev_title; ?></a>
+                        <i class="fa fa-circle" style="font-size: 5px; margin: 0 5px; position: relative;top: -3px; opacity: .4;"></i>
+                    </li>
+
+
+                </ul>
+
+            </div>
+        </div>
+        <h1 class="page-title">
+        </h1>
+        <div class="portlet light bordered">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="portlet light portlet-fit portlet-form bordered">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class=" icon-settings font-red"></i>
+                                <span class="caption-subject font-green sbold uppercase">Create New Checklist</span>
+                            </div>
+                            <div class="action" style=" float: right;">
+                                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#checklistModal" data-update_value="0">Add CheckList</button>
+                                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#assignToModel" data-update_value="0">Assign CheckList</button>
+                            </div>
+
+                        </div>
+                        <div class="portlet-body">
+                            <table class="table" id="check_list_table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Create at</th>
+                                        <th>Create by</th>
+                                        <th>Update at</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="check_list_tbody">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--check list option start -->
+            <div class="modal fade" id="checklistoptionModal" role="dialog">
+                <div class="modal-dialog modal-full">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <i class=" icon-layers font-green"></i>
+                            <span class="caption-subject font-green sbold uppercase">Create New Checklist Options</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <form id="checklist_option_form" enctype="multipart/form-data" method="post">
+                                        <div class="form-body">
+
+                                            <!--Check list Name-->
+                                            <div class="form-group form-md-line-input">
+                                                <label class="col-md-3 control-label text-center">Name</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" name="check_title" class="form-control" />
+                                                    <input type="hidden" name="check_type" value="<?= base64_encode("2") ?>" class="form-control" />
+                                                    <div class="form-control-focus"></div>
+                                                    <span class="help-block help-block-error"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group form-md-line-input">
+                                                <label class="col-md-3 control-label text-center">Options</label>
+                                                <div class="col-md-9">
+                                                    <input type="radio" name="check_option" value="<?= base64_encode("1") ?>" class="" />Optional
+                                                    <input type="radio" name="check_option" value="<?= base64_encode("2") ?>" class="" />Compulsory
+                                                    <div class="form-control-focus"></div>
+                                                    <span class="help-block help-block-error"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group form-md-line-input">
+                                                <label class="col-md-3 control-label text-center">Instruction file</label>
+                                                <div class="col-md-9">
+                                                    <input type="file" name="userfile[]"  class="form-control" multiple />
+                                                    <div class="form-control-focus"></div>
+                                                    <span class="help-block help-block-error"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group form-md-line-input">
+                                                <label class="col-md-3 control-label text-center">Instruction file</label>
+                                                <div class="col-md-9">
+                                                    <textarea  name="check_description" class="form-control"></textarea>
+                                                    <div class="form-control-focus"></div>
+                                                    <span class="help-block help-block-error"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-offset-6 col-md-6">
+                                                    <button  type="submit" class="btn btn-primary">Save changes</button>
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="portlet light portlet-fit portlet-form bordered">
+                                        <div class="portlet-title">
+                                            <div class="caption">
+                                                <i class=" icon-settings font-red"></i>
+                                                <span class="caption-subject font-green sbold uppercase">Checklist Options</span>
+                                            </div>
+                                        </div>
+                                        <div class="portlet-body">
+                                            <table class="table" id="check_listoption_table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>option</th>
+                                                        <th>Instruction</th>
+                                                        <th>Instruction file</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="check_listoption_tbody">
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--start checklist option-->
+
+            <!--check list modal start -->
+            <div class="modal fade" id="checklistModal" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <i class=" icon-layers font-green"></i>
+                            <span class="caption-subject font-green sbold uppercase">Create New Checklist</span>
+                        </div>
+                        <div class="modal-body">
+                            <form id="checklist_form">
+                                <div class="form-body">
+
+                                    <!--Check list Name-->
+                                    <div class="form-group form-md-line-input">
+                                        <label class="col-md-3 control-label text-center">Name</label>
+                                        <div class="col-md-9">
+                                            <input type="text" name="check_title" class="form-control" />
+                                            <input type="hidden" name="check_type" value="1" class="form-control" />
+                                            <div class="form-control-focus"></div>
+                                            <span class="help-block help-block-error"></span>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="col-md-offset-6 col-md-6">
+                                            <button  class="btn btn-primary">Save changes</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--check list modal end-->
+
+            <!--assign model start -->
+            <div class="modal fade" id="assignToModel" role="dialog">
+                <div class="modal-dialog ">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <i class=" icon-layers font-green"></i>
+                            <span class="caption-subject font-green sbold uppercase">Assign CheckList</span>
+                        </div>
+                        <div class="modal-body">
+                            <form id="assign_check_to_user_form">
+                                <div class="form-body">
+                                    <!--Check list Name-->
+                                    <div class="form-group form-md-line-input">
+                                        <label class="col-md-3 control-label text-center">Select CheckList</label>
+                                        <div class="col-md-9">
+                                            <select name="check_list" class="form-control" id="assign_check_list" >
+
+                                            </select>
+                                            <div class="form-control-focus"></div>
+                                            <span class="help-block help-block-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group form-md-line-input">
+                                        <label class="col-md-3 control-label text-center">Select User</label>
+                                        <div class="col-md-9">
+                                            <select name="user_list" class="form-control" id="assign_user_list">
+
+                                            </select>
+                                            <div class="form-control-focus"></div>
+                                            <span class="help-block help-block-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-actions">
+                                        <div class="row">
+                                            <div class="col-md-offset-6 col-md-6">
+                                                <button  type="submit" class="btn btn-primary">Save</button>
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <!--assign checklist end-->
+        </div>
+    </div>
+</div>
+<link href="<?php echo base_url() . "assets/"; ?>/global/plugins/jquery-notific8/jquery.notific8.min.css" rel="stylesheet" type="text/css"/>
+
+<?php $this->load->view('admin/footer'); ?>
+<script src="<?php echo base_url() . "assets/"; ?>global/plugins/select2/js/select2.full.min.js" type="text/javascript"></script>
+
+<script src="<?php echo base_url() . "assets/"; ?>global/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url() . "assets/"; ?>global/plugins/jquery-notific8/jquery.notific8.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        /**
+         * start check list form
+         */
+        $("#checklist_form").validate({
+
+            rules: {
+                check_title: {
+                    required: true,
+//                    letter_with_whitespace: true
+                }
+            },
+            messages: {
+                check_title: {
+                    required: "Please Enter Check List Name",
+                    letter_with_whitespace: "Only letter and whitespace allowed"
+                }
+            },
+            submitHandler: function (form) {
+                var url = "<?= base_url("hr_checklist_master/make_list") ?>";
+
+                var json = '{}';
+                var object = JSON.parse(json);
+
+                for (var i = 0; i < form.length - 1; i++) {
+                    if (form[i].value !== "") {
+                        object[form[i].name] = window.btoa(form[i].value);
+                    }
+                }
+
+                $.ajax({
+                    url: url,
+                    data: object,
+                    method: "post"
+                }).done(function (success) {
+                    console.log(success);
+                    $('#checklistModal').modal('toggle');
+                    success = JSON.parse(success);
+                    var message = success["response"];
+                    console.log(message);
+                    $("#checklist_form").trigger("reset");
+                    load_table();
+                    $.notific8(message, {
+                        horizontalEdge: 'bottom',
+                        verticalEdge: 'right',
+                        zindex: 50000,
+                    });
+
+                }).fail(function (error) {
+                    console.log(error);
+                    $('#checklistModal').modal('toggle');
+                    $.notific8(success, {
+                        horizontalEdge: 'bottom',
+                        verticalEdge: 'right',
+                        zindex: 50000,
+                        theme: 'ruby',
+                    });
+                });
+            }
+        });
+
+        /*
+         * end check list form
+         */
+
+        /*
+         *
+         * check list option form
+         */
+        var setlist_ref;
+        $('#checklist_option_form').on('submit', function (event) {
+            event.preventDefault();
+            $.ajax({
+                url: "<?= base_url("hr_checklist_master/make_list_option") ?>",
+                type: "POST",
+                data: new FormData(this),
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function (success) {
+                    success = JSON.parse(success);
+                    var message = success["response"];
+                    $("#checklist_option_form").trigger("reset");
+                    $.notific8(message, {
+                        horizontalEdge: 'bottom',
+                        verticalEdge: 'right',
+                        zindex: 50000
+                    });
+                    load_checklist_table(setlist_ref)
+                },
+                error: function (error) {
+                    console.log(error);
+                    error = JSON.parse(error);
+                    var message = error["response"];
+                    console.log(message);
+                    $("#checklist_option_form").trigger("reset");
+                    $.notific8(message, {
+                        horizontalEdge: 'bottom',
+                        verticalEdge: 'right',
+                        zindex: 50000
+                    });
+                }
+            });
+        }
+        );
+
+        /*
+         *
+         * Asign checklist form
+         */
+        $('#assign_check_to_user_form').on('submit', function (event) {
+            event.preventDefault();
+            $.ajax({
+                url: "<?= base_url("hr_checklist_master/assign_checklist") ?>",
+                type: "POST",
+                data: new FormData(this),
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function (success) {
+                    success = JSON.parse(success);
+                    var message = success["response"];
+                    $("#assign_check_to_user_form").trigger("reset");
+                    $.notific8(message, {
+                        horizontalEdge: 'bottom',
+                        verticalEdge: 'right',
+                        zindex: 50000
+                    });
+                    load_checklist_table(setlist_ref)
+                },
+                error: function (error) {
+                    console.log(error);
+                    error = JSON.parse(error);
+                    var message = error["response"];
+                    console.log(message);
+                    $("#assign_check_to_user_form").trigger("reset");
+                    $.notific8(message, {
+                        horizontalEdge: 'bottom',
+                        verticalEdge: 'right',
+                        zindex: 50000
+                    });
+                }
+            });
+        }
+        );
+
+
+
+        load_table();
+
+        /*
+         * checklist options modal show event
+         */
+        $('#checklistoptionModal').on('show.bs.modal', function (e) {
+            var update_value = $(e.relatedTarget).data('check_list_value');
+            var update_option_value = $(e.relatedTarget).data('check_option_value');
+
+
+            setlist_ref = update_value;
+            if (update_value !== 0) {
+                $('<input>').attr({
+                    type: 'hidden',
+                    id: 'listref',
+                    name: 'listref',
+                    value: update_value
+                }).appendTo('#checklist_option_form');
+                load_checklist_table(update_value);
+            }
+            if (update_option_value !== 0) {
+                get_checklist_option_by_id(update_option_value);
+            }
+        });
+
+        /*
+         * checklist modal show event
+         */
+        $('#checklistModal').on('show.bs.modal', function (e) {
+            var update_value = $(e.relatedTarget).data('update_value');
+            if (update_value !== 0) {
+                $('<input>').attr({
+                    type: 'hidden',
+                    id: 'update_value',
+                    name: 'update_value',
+                    value: window.atob(update_value)
+                }).appendTo('#checklist_form');
+                get_clicklist_by_id(update_value);
+            }
+        });
+
+        /*
+         * assignToModel show event
+         * call checklist options load function
+         */
+        $('#assignToModel').on('show.bs.modal', function (e) {
+            get_checklist_options();
+            get_users_options();
+        });
+        /*
+         * checklist modal close event
+         */
+        $('#checklistModal').on('hide.bs.modal', function (e) {
+            $("#update_value").remove();
+            $("#checklist_form").trigger("reset");
+        });
+
+        /*
+         * checklist options modal close event
+         */
+        $('#checklistoptionModal').on('hide.bs.modal', function (e) {
+            $("#listref").remove();
+            $("#checklist_option_form").trigger("reset");
+        });
+
+
+    });
+
+
+    function get_checklist_options() {
+        var url = "<?= base_url("hr_checklist_master/hr_checklist_option") ?>";
+        $.ajax({
+            url: url,
+            method: "post"
+        }).done(function (checklist) {
+            var object = JSON.parse(checklist);
+            console.log(object);
+            $("#assign_check_list").empty();
+            $("#assign_check_list").html(object['checklist_options']);
+
+        }).fail(function (error) {
+            $.notific8("Error while loading", {
+                horizontalEdge: 'bottom',
+                verticalEdge: 'right',
+                zindex: 50000,
+                theme: 'ruby'
+            });
+        });
+    }
+
+    function get_users_options() {
+        var url = "<?= base_url("hr_checklist_master/hr_user_option") ?>";
+        $.ajax({
+            url: url,
+            method: "post"
+        }).done(function (checklist) {
+            var object = JSON.parse(checklist);
+            console.log(object);
+            $("#assign_user_list").empty();
+            $("#assign_user_list").html(object['userlist_options']);
+
+        }).fail(function (error) {
+            $.notific8("Error while loading", {
+                horizontalEdge: 'bottom',
+                verticalEdge: 'right',
+                zindex: 50000,
+                theme: 'ruby'
+            });
+        });
+    }
+
+    function get_clicklist_by_id(id) {
+        var url = "<?= base_url() ?>hr_checklist_master/checklist_record";
+        var data = {
+            "list_id": id
+        };
+        $.ajax({
+            url: url,
+            data: data,
+            method: "post"
+        }).done(function (checklist) {
+            var object = JSON.parse(checklist);
+            $("input[name='check_title']").val(object['checklist'][0]["title"]);
+
+        }).fail(function (error) {
+            $.notific8(error, {
+                horizontalEdge: 'bottom',
+                verticalEdge: 'right',
+                zindex: 50000,
+                theme: 'ruby'
+            });
+        });
+    }
+
+    function get_checklist_option_by_id(id) {
+        var url = "<?= base_url() ?>hr_checklist_master/checklist_option_record";
+        var data = {
+            "list_id": id
+        };
+        $.ajax({
+            url: url,
+            data: data,
+            method: "post"
+        }).done(function (checklist) {
+            var object = JSON.parse(checklist);
+            $("input[name='check_title']").val(object['checklist'][0]["title"]);
+            $("input[name='check_option']").val(object['checklist'][0]["option_type"]);
+            $("input[name='check_description']").val(object['checklist'][0]["check_descp"]);
+
+        }).fail(function (error) {
+            $.notific8(error, {
+                horizontalEdge: 'bottom',
+                verticalEdge: 'right',
+                zindex: 50000,
+                theme: 'ruby'
+            });
+        });
+    }
+
+    function checklist_delete_by(id) {
+        var url = "<?= base_url("hr_checklist_master/remove") ?>";
+        $.ajax({
+            url: url,
+            data: {update_value: window.btoa(id)},
+            method: "post"
+        }).done(function (success) {
+            console.log(success);
+            success = JSON.parse(success);
+            var message = success["response"];
+            console.log(message);
+            load_table();
+            $.notific8(message, {
+                horizontalEdge: 'bottom',
+                verticalEdge: 'right',
+                zindex: 50000
+            });
+        }).fail(function (error) {
+            console.log(error);
+            $.notific8(error, {
+                horizontalEdge: 'bottom',
+                verticalEdge: 'right',
+                zindex: 50000,
+                theme: 'ruby'
+            });
+        });
+    }
+
+    function checklist_option_delete_by(id, ref) {
+        checklist_delete_by(id);
+        console.log(ref);
+        load_checklist_table(window.btoa(ref));
+    }
+
+    function load_table() {
+        var url = "<?= base_url("hr_checklist_master/list") ?>";
+        $.ajax({
+            url: url,
+            method: "post"
+        }).done(function (success) {
+            success = JSON.parse(success);
+            $('#check_list_tbody').empty();
+            $('#check_list_tbody').append(success['checklist']);
+            $('#check_list_table').DataTable();
+        }).fail(function (error) {
+            console.log(error);
+            $.notific8(error, {
+                horizontalEdge: 'bottom',
+                verticalEdge: 'right',
+                zindex: 50000,
+                theme: 'ruby'
+            });
+        });
+
+    }
+
+    function load_checklist_table(list_ref) {
+        var url = "<?= base_url("hr_checklist_master/checklist_option_list") ?>";
+        $.ajax({
+            url: url,
+            data: {"list_ref": list_ref},
+            method: "post"
+        }).done(function (success) {
+            success = JSON.parse(success);
+            console.log(success);
+            $('#check_listoption_tbody').empty();
+            $('#check_listoption_tbody').append(success['checklist']);
+            $('#check_listoption_table').DataTable();
+        }).fail(function (error) {
+            console.log(error);
+            $.notific8(error, {
+                horizontalEdge: 'bottom',
+                verticalEdge: 'right',
+                zindex: 50000,
+                theme: 'ruby'
+            });
+        });
+
+    }
+
+
+
+
+</script>

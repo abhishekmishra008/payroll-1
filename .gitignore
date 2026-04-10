@@ -1,0 +1,13 @@
+#.idea/*
+#.idea/workspace.xml
+#.idea/workspace.xml
+/nbproject/
+.idea/*
+/application/logs/*
+application/logs/*
+application/PHPExcel/*
+/vendor/
+db.zip
+/db/
+*.sql
+.env
